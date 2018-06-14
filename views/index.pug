@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  #title-container
+    h1#title #{title}
+  #chart-container
+    #result-container(style=('display:none;'))
+      .bar
+          .pollen-value
+    #animation-container
+      .bar.animated-bar
+      .bar.animated-bar
+      .bar.animated-bar
+      .bar.animated-bar
+      .bar.animated-bar
+      .bar.animated-bar
+      .bar.animated-bar
+
+  script(async src='/javascript/randomChart.js')
+  script(async src='/javascript/index.js')
+
