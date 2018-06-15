@@ -9,3 +9,7 @@ _The pollen count of the future, today!_
 1. Install dependencies with `npm install`
 2. Test using `npm test`
 3. run using `npm start`
+
+# License
+
+[MIT](/LICENSE)
