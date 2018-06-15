@@ -11,5 +11,5 @@ node_modules/
 .DS_Store
 
 # Built files
-.css
-.css.map
+*.css
+*.css.map
