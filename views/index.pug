@@ -8,13 +8,10 @@ block content
       .bar
         .pollen-value
     #animation-container
-      .bar.animated-bar
-      .bar.animated-bar
-      .bar.animated-bar
-      .bar.animated-bar
-      .bar.animated-bar
-      .bar.animated-bar
-      .bar.animated-bar
+      - var n = 0;
+      while n < 8
+        .bar.animated-bar
+        - n++;
 
   script(async src='/javascript/randomChart.js')
   script(async src='/javascript/index.js')
