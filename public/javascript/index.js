@@ -10,10 +10,10 @@ window.fetch('api/pollen')
     var resultContainer = document.getElementById('result-container')
     resultContainer.style.cssText = ''
     var resultBar = resultContainer.querySelector('.bar')
-    resultBar.style.cssText = 'animation: rise 5s ease;'
+    resultBar.style.cssText = 'animation: bar 1.5s ease;'
+    resultBar.style.setProperty('--bar-height', `${result * 2}px`)
     var pollenValueElement = resultBar.querySelector('.pollen-value')
     pollenValueElement.innerHTML = Math.round(result * 100) / 100
-    pollenValueElement.style.cssText = 'animation: rise-text 5s ease;'
   })
   .catch((error) => {
     console.error(error)
