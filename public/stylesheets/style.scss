@@ -2,17 +2,6 @@ $main-background-color: #BC8D2F;
 $chart-color: #38A31D;
 $title-color: #E7E5DF;
 
-#title-container {
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-
-  @media (min-width: 768px) {
-    bottom: 5%;
-  }
-}
-
 #title {
   color: $title-color;
   font-size: 3em;
@@ -23,23 +12,20 @@ $title-color: #E7E5DF;
   }
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: $main-background-color;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 #chart-container {
-  top: 10%;
-  right: 15%;
-  bottom: 25%;
-  left: 15%;
-  position: absolute;
+  height: 60%;
 
   @media (min-width: 768px) {
-    top: 30%;
-    right: 35%;
-    bottom: 25%;
-    left: 35%;
+    height: 70%;
   }
 
   .bar {
@@ -64,8 +50,7 @@ body {
   }
 
   #result-container {
-    position: absolute;
-    bottom: 0;
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: flex-end;
