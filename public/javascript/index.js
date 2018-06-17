@@ -8,7 +8,7 @@ window.fetch('api/pollen')
   .then((result) => {
     document.getElementById('animation-container').style.display = 'none'
     var resultContainer = document.getElementById('result-container')
-    resultContainer.style.cssText = `height: ${result * 2}px;`
+    resultContainer.style.cssText = ''
     var resultBar = resultContainer.querySelector('.bar')
     resultBar.style.cssText = 'animation: rise 5s ease;'
     var pollenValueElement = resultBar.querySelector('.pollen-value')
