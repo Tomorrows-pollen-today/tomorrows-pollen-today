@@ -12,7 +12,7 @@ window.fetch('api/pollen')
     var resultBar = resultContainer.querySelector('.bar')
     resultBar.style.cssText = 'animation: bar 1.5s ease;'
     resultBar.style.setProperty('--bar-height', `${result * 2}px`)
-    var pollenValueElement = resultBar.querySelector('.pollen-value')
+    var pollenValueElement = resultContainer.querySelector('.pollen-value')
     pollenValueElement.innerHTML = Math.round(result * 100) / 100
   })
   .catch((error) => {
