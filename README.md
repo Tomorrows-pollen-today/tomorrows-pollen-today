@@ -7,8 +7,12 @@ _The pollen count of the future, today!_
 # Usage
 
 1. Install dependencies with `npm install`
-2. Test using `npm test`
-3. Run using `npm start`
+2. Create a `.env` file and fill out the following:
+   * `PREDICTOR_URL` : The url for the pollen prediction service
+   * `API_KEY` : The API key for the pollen prediction service
+   * `ENVIRONMENT` : The environment that this webservice runs in eg. `development`
+3. Test using `npm test`
+4. Run using `npm start`
 
 # License
 
