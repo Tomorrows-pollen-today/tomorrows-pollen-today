@@ -58,7 +58,7 @@ body {
     position: relative;
 
     .bar {
-      --bar-height: 0px;
+      --bar-height: 0%;
       height: var(--bar-height);
       width: 100%;
       display: flex;

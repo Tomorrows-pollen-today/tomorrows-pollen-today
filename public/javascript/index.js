@@ -6,12 +6,14 @@ window.fetch('api/pollen')
     return Promise.reject(response.statusText)
   })
   .then((result) => {
+    // An abitrary value to make the bar scale better
+    const maxPollenCount = 200
     document.getElementById('animation-container').style.display = 'none'
     var resultContainer = document.getElementById('result-container')
     resultContainer.style.cssText = ''
     var resultBar = resultContainer.querySelector('.bar')
     resultBar.style.cssText = 'animation: bar 1.5s ease;'
-    resultBar.style.setProperty('--bar-height', `${result * 2}px`)
+    resultBar.style.setProperty('--bar-height', `${result / maxPollenCount * 100}%`)
     var pollenValueElement = resultContainer.querySelector('.pollen-value')
     pollenValueElement.innerHTML = Math.round(result * 100) / 100
   })
