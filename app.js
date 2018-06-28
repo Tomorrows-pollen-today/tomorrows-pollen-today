@@ -4,7 +4,6 @@ const path = require('path')
 
 // Middleware
 const createError = require('http-errors')
-const logger = require('morgan')
 const sassMiddleware = require('node-sass-middleware')
 const compression = require('compression')
 
@@ -18,7 +17,6 @@ const app = express()
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
-app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(sassMiddleware({
@@ -29,6 +27,11 @@ app.use(sassMiddleware({
   sourceMap: true
 }))
 app.use(compression())
+
+if (app.get('env') === 'development') {
+  const logger = require('morgan')
+  app.use(logger('dev'))
+}
 
 app.use(express.static(path.join(__dirname, 'public')))
 
