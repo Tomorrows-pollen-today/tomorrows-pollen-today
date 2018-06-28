@@ -1,7 +1,6 @@
 const express = require('express')
 const request = require('request-promise-native')
 const router = express.Router()
-require('dotenv').config()
 const API_KEY = process.env.API_KEY
 const PREDICTOR_URL = process.env.PREDICTOR_URL
 
