@@ -10,7 +10,9 @@ _The pollen count of the future, today!_
 2. Create a `.env` file and fill out the following:
    * `PREDICTOR_URL` : The url for the pollen prediction service
    * `API_KEY` : The API key for the pollen prediction service
-   * `ENVIRONMENT` : The environment that this webservice runs in eg. `development`
+   * `NODE_ENV` : The environment that this webservice runs in. Valid values are:
+     * `'development'`
+     * `'production'`
 3. Test using `npm test`
 4. Run using `npm start`
 
