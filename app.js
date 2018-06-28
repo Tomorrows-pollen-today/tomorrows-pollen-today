@@ -25,6 +25,7 @@ app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   indentedSyntax: false, // true = .sass and false = .scss
+  outputStyle: app.get('env') === 'development' ? 'nested' : 'compressed',
   sourceMap: true
 }))
 app.use(compression())
