@@ -1,5 +1,12 @@
-# Tomorrow's Pollen Today
-_The pollen count of the future, today!_
+<h1 align="center">
+  <a href="https://tomorrowspollen.today">
+    <img src="/public/images/logo.svg" width="20%" alt="Tomorrow's Pollen Today">
+  </a>
+  <br>
+  Tomorrow's Pollen Today
+  <br>
+  <br>
+</h1>
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Build Status](https://travis-ci.org/Tomorrows-pollen-today/tomorrows-pollen-today.svg?branch=master)](https://travis-ci.org/Tomorrows-pollen-today/tomorrows-pollen-today)
