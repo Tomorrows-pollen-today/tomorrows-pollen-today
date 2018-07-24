@@ -15,7 +15,11 @@ window.fetch('api/pollen')
     resultBar.style.cssText = 'animation: bar 1.5s ease;'
     resultBar.style.setProperty('--bar-height', `${result / maxPollenCount * 100}%`)
     var pollenValueElement = resultContainer.querySelector('.pollen-value')
-    pollenValueElement.innerHTML = Math.round(result * 100) / 100
+    if (result <= 1) {
+      pollenValueElement.innerHTML = `${String.fromCodePoint('0X1F44C')}<br>All Clear`
+    } else {
+      pollenValueElement.innerHTML = Math.round(result * 100) / 100
+    }
   })
   .catch((error) => {
     console.error(error)
