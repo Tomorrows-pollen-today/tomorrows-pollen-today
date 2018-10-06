@@ -1,6 +1,6 @@
 {
     "name": "Tomorrow's Pollen Today",
-    "short_name": "Tomorrow's Pollen",
+    "short_name": "PollenOutlook",
     "icons": [
         {
             "src": "/public/images/icon/android-chrome-192x192.png",
