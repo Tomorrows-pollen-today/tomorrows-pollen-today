@@ -1,22 +1,13 @@
 const express = require('express')
 const request = require('request-promise-native')
 const router = express.Router()
-const API_KEY = process.env.API_KEY
-const PREDICTOR_URL = process.env.PREDICTOR_URL
 
 router.get('/pollen', async function (req, res, next) {
+  var date = new Date()
+  date.setDate(date.getDate() + 1)
   var options = {
-    method: 'POST',
-    uri: PREDICTOR_URL,
-    headers: {
-      Authorization: `Bearer ${API_KEY}`,
-      Accept: 'application/json'
-    },
-    body: {
-      GlobalParameters: {
-        'Output_name': ''
-      }
-    },
+    method: 'GET',
+    uri: `${process.env.YESTERDAYS_POLLEN_URL}/api/pollen/${date.toISOString()}`,
     json: true
   }
   var result
@@ -27,7 +18,7 @@ router.get('/pollen', async function (req, res, next) {
     res.status(500).send('Unable to retrieve pollen numbers.')
   }
   if (result) {
-    res.send(result.Results.predicted_pollen_count.value.Values[0][0])
+    res.json(result.PredictedPollenCount)
   }
 })
 
