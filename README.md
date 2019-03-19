@@ -15,8 +15,7 @@
 
 1. Install dependencies with `npm install`
 2. Create a `.env` file and fill out the following:
-   * `PREDICTOR_URL` : The url for the pollen prediction service
-   * `API_KEY` : The API key for the pollen prediction service
+   * `'YESTERDAYS_POLLEN_URL'` : The url for the server running [Yesterday's Pollen Today](https://github.com/Tomorrows-pollen-today/yesterdays-pollen-today/)
    * `NODE_ENV` : The environment that this webservice runs in. Valid values are:
      * `'development'`
      * `'production'`
