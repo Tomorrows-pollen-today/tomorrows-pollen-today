@@ -1,16 +1,4 @@
-let requestUrl = new URL(window.location)
-requestUrl.pathname = '/api/pollen'
-requestUrl.search = new URLSearchParams({
-  pollenType: 1,
-  location: 0
-})
-window.fetch(requestUrl)
-  .then((response) => {
-    if (response.ok) {
-      return response.json()
-    }
-    return Promise.reject(response.statusText)
-  })
+fetchPollen(0, 0)
   .then((result) => {
     // An abitrary value to make the bar scale better
     const maxPollenCount = 200
@@ -30,3 +18,24 @@ window.fetch(requestUrl)
   .catch((error) => {
     console.error(error)
   })
+
+/**
+ * Fetches the predicted pollen count for tomorrow for the given pollen type and location.
+ * @param  {number} pollenType The type of pollen to get a prediction for.
+ * @param  {number} location   The location to get a prediction for.
+ * @return {Promise}           A promise object that is resolved with an object containing the predicted
+ *                             pollen count as well as the location.
+ */
+async function fetchPollen (pollenType, location) {
+  let requestUrl = new URL(window.location)
+  requestUrl.pathname = '/api/pollen'
+  requestUrl.search = new URLSearchParams({
+    pollenType: pollenType,
+    location: location
+  })
+  let response = await window.fetch(requestUrl)
+  if (response.ok) {
+    return response.json()
+  }
+  return Promise.reject(response.statusText)
+}
