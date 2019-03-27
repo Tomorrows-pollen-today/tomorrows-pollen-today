@@ -22,7 +22,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-#chart-container {
+.chart-container {
   height: 60%;
 
   @media (min-width: 768px) {
@@ -33,7 +33,7 @@ body {
     background-color: $chart-color;
   }
 
-  #animation-container {
+  .animation-container {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -50,7 +50,7 @@ body {
     }
   }
 
-  #result-container {
+  .result-container {
     height: 100%;
     width: 100%;
     display: flex;

@@ -3,11 +3,11 @@ extends layout
 block content
   #title-container
     h1#title #{title}
-  #chart-container
-    #result-container(style=('display:none;'))
+  .chart-container
+    .result-container(style=('display:none;'))
       .bar
       .pollen-value
-    #animation-container
+    .animation-container
       - var n = 0;
       while n < 8
         .bar.animated-bar
