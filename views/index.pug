@@ -3,15 +3,17 @@ extends layout
 block content
   #title-container
     h1#title #{title}
-  .chart-container
-    .result-container(style=('display:none;'))
-      .bar
-      .pollen-value
-    .animation-container
-      - var n = 0;
-      while n < 8
-        .bar.animated-bar
-        - n++;
+  .charts-container
+    for pollenType in pollenTypes
+      .chart-container(data-pollen-type=`${pollenType.pollenid}` style=`width:${100/pollenTypes.length}%;`)
+        div(class='result-container' style=('display:none;'))
+          .bar
+          .pollen-value
+        .animation-container
+          - var n = 0;
+          while n < 8
+            .bar.animated-bar
+            - n++;
 
   script(async src='/javascript/randomChart.js')
   script(async src='/javascript/index.js')
