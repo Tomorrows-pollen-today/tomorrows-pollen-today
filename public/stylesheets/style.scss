@@ -4,12 +4,8 @@ $title-color: #E7E5DF;
 
 #title {
   color: $title-color;
-  font-size: 3em;
+  font-size: 5vw;
   text-align: center;
-
-  @media (min-width: 768px) {
-    font-size: 5rem;
-  }
 }
 
 html, body {
@@ -76,7 +72,7 @@ body {
     }
 
     .pollen-value {
-      font-size: 3em;
+      font-size: 5vw;
       position: absolute;
       text-align: center;
       width: 100%;
@@ -95,9 +91,9 @@ body {
 
 @keyframes rise-text {
   0% {
-    font-size: 0;
+    font-size: 0vw;
   }
   100% {
-    font-size: 3em;
+    font-size: 5vw;
   }
 }
