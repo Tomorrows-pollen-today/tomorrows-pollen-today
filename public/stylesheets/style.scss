@@ -19,11 +19,7 @@ body {
 }
 
 .chart-container {
-  height: 60%;
-
-  @media (min-width: 768px) {
-    height: 70%;
-  }
+  height: 100%;
 
   .bar {
     background-color: $chart-color;
