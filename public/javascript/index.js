@@ -1,10 +1,10 @@
+// An abitrary value to make the bar scale better
+const maxPollenCount = 200
 const chartContainerElements = document.getElementsByClassName('chart-container')
 
 for (let chartContainerElement of chartContainerElements) {
   fetchPollen(chartContainerElement.getAttribute('data-pollen-type'), 0)
     .then((result) => {
-      // An abitrary value to make the bar scale better
-      const maxPollenCount = 200
       chartContainerElement.querySelector('.animation-container').style.display = 'none'
       var resultContainer = chartContainerElement.querySelector('.result-container')
       resultContainer.style.cssText = ''
