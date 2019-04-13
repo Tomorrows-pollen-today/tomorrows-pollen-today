@@ -18,6 +18,16 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.charts-container {
+  display: flex;
+  height: 70%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 10px 5vw;
+}
+
 .chart-container {
   height: 100%;
 
