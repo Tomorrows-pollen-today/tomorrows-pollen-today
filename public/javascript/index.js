@@ -1,23 +1,28 @@
-fetchPollen(0, 0)
-  .then((result) => {
-    // An abitrary value to make the bar scale better
-    const maxPollenCount = 200
-    document.getElementById('animation-container').style.display = 'none'
-    var resultContainer = document.getElementById('result-container')
-    resultContainer.style.cssText = ''
-    var resultBar = resultContainer.querySelector('.bar')
-    resultBar.style.cssText = 'animation: bar 1.5s ease;'
-    resultBar.style.setProperty('--bar-height', `${result.predictedPollenCount / maxPollenCount * 100}%`)
-    var pollenValueElement = resultContainer.querySelector('.pollen-value')
-    if (result.predictedPollenCount <= 1) {
-      pollenValueElement.innerHTML = `${String.fromCodePoint('0X1F44C')}<br>All Clear`
-    } else {
-      pollenValueElement.innerHTML = Math.round(result.predictedPollenCount * 100) / 100
-    }
-  })
-  .catch((error) => {
-    console.error(error)
-  })
+const chartContainerElements = document.getElementsByClassName('chart-container')
+
+for (let chartContainerElement of chartContainerElements) {
+  fetchPollen(chartContainerElement.getAttribute('data-pollen-type'), 0)
+    .then((result) => {
+      // An abitrary value to make the bar scale better
+      const maxPollenCount = 200
+      chartContainerElement.querySelector('.animation-container').style.display = 'none'
+      var resultContainer = chartContainerElement.querySelector('.result-container')
+      resultContainer.style.cssText = ''
+      var resultBar = resultContainer.querySelector('.bar')
+      resultBar.style.cssText = 'animation: bar 1.5s ease;'
+      resultBar.style.setProperty('--bar-height', `${result.predictedPollenCount / maxPollenCount * 100}%`)
+      var pollenValueElement = resultContainer.querySelector('.pollen-value')
+      pollenValueElement.style.cssText = 'animation: rise-text 1.5s ease;'
+      if (result.predictedPollenCount <= 1) {
+        pollenValueElement.innerHTML = `${String.fromCodePoint('0X1F44C')}<br>All Clear`
+      } else {
+        pollenValueElement.innerHTML = Math.round(result.predictedPollenCount * 100) / 100
+      }
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+}
 
 /**
  * Fetches the predicted pollen count for tomorrow for the given pollen type and location.
